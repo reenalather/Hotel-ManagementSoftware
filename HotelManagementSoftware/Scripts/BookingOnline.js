@@ -55,7 +55,6 @@ var nextStep = function () {
             step2Form.style.display = "";
             currentStep += 1;
             break;
-
         case 2:
             step2Form.style.display = "none";
             step3Form.style.display = "";
@@ -68,9 +67,15 @@ var nextStep = function () {
             nextButton.innerHTML = "Submit";
             break;
         default:
+
+            var dateRange = $("#booking-date").val().split("-");
+            dateRange = dateRange.map(function (item) {
+                return item.trim();
+            });
+            console.log(dateRange);
             data = {
-                "ArrivalDate": $()
-                "BookingDate": document.getElementById("booking-date").value,
+                "ArrivalDate": dateRange[0] + " 00:00:00",
+                "DepartureDate": dateRange[1] + " 00:00:00",
                 "RoomType": document.getElementById("room-type").value,
                 "Adult": document.getElementById("adult").value,
                 "Infant": document.getElementById("infant").value,               

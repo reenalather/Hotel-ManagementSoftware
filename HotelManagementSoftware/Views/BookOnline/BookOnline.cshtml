@@ -25,7 +25,7 @@
             <label for="arrival-date" class="col-sm-4 col-form-label">Booking Date:</label>
             <div class="input-group input-daterange">
 
-                <input name="daterange" id="booking-date" type="text" class="form-control" placeholder="--dd/mm/yyyy--" data-date-days-of-week-highlighted="[0]" data-date-start-date="0d">
+                <input name="daterange" id="booking-date" type="text" class="form-control" placeholder="--dd/mm/yyyy--">
             </div>
         </div>
         <div class="form-group row">
@@ -213,7 +213,10 @@
 
     $(function () {
         $('input[name="daterange"]').daterangepicker({
-            opens: 'left'
+            opens: 'left',
+            locale: {
+                format: 'DD/MM/YYYY'
+            }
         }, function (start, end, label) {
             console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
         });
