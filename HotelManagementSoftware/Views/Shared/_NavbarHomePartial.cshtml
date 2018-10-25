@@ -1,0 +1,53 @@
+﻿<div class="col-3">
+    <div class="row">
+        <div class="col-3">
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        @Html.ActionLink("Logo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    </div>
+
+                    @*Header Login and enquiry button on home page*@
+                    <div class="navbar-right">
+                        <form class="navbar-form navbar-right">
+                            <button type="submit" class="btn btn-default">Enquiry</button>
+                        </form>
+                        @Html.Partial("_LoginPartial")
+                    </div>
+
+                    @*Navbar at Home page*@
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("About us", "Index", "Aboutus", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Rooms", "Index", "Rooms", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Services", "Index", "Services", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Contact", "Index", "Contact", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("AdminSetup", "Index", "AdminSetup", new { area = "" }, null)</li>
+
+                            @*<button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Rooms <span class="caret"></span>
+        </button>
+        <div class="dropdown-menu" area-labelledby=" dropdownMenuButton">
+
+            <li>@Html.ActionLink("BookOnline", "Index", "BookOnline", new { area = "" }, null)</li>
+            <li>@Html.ActionLink("Form", "Index", "Form", new { area = "" }, null)</li>
+            <li>@Html.ActionLink("Payment", "Index", "Payment", new { area = "" }, null)</li>
+            <li>@Html.ActionLink("Confirmation", "Index", "Confirmation", new { area = "" }, null)</li>
+        </div>
+
+                            *@
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

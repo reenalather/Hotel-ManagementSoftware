@@ -1,0 +1,87 @@
+﻿@Html.Partial("_NavbarPartial")
+
+<div class="jumbotron">
+    <form>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label for="booking-date" class="col-sm-4 col-form-label">Booking Date</label>
+                    <input type="text" id="booking-date" class="form-control-plaintext" name="booking-date" placeholder="dd/mm/yyyy" />
+                </div>
+                <div class="form-group row">
+                    <label for="departure-date" class="col-sm-4 col-form-label">Departure Date</label>
+                    <input type="text" id="departure-date"class="form-control-plaintext" name="departure-date" placeholder="dd/mm/yyyy" />
+                </div>
+                <div class="form-group row">
+                    <label for="booking-ref" class="col-sm-4 col-form-label">Booking ref</label>
+                    <input type="text" id="booking-ref"class="form-control-plaintext" name="booking-ref" placeholder="text" />
+                </div>
+                <div class="form-group row">
+                    <label for="total-rent" class="col-sm-4 col-form-label">Total Rent</label>
+                    <input type="text" id="total-rent"class="form-control-plaintext" name="total-rent" placeholder="---$300---" />
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label for="total-bond" class="col-sm-4 col-form-label"> Total Bond</label>
+                    <input type="text" id="total-bond" class="form-control-plaintext" name="total-bond" placeholder="---$150---" />
+                </div>
+
+                <div class="form-group row">
+                    <label for="due" class="col-sm-4 col-form-label">Total gst</label>
+                    <input type="text" id="total-gst" class="form-control-plaintext" name="due" placeholder="---$50---" />
+                </div>
+                <div class="form-group row">
+                    <label for="total-paid" class="col-sm-4 col-form-label">Total Paid</label>
+                    <input type="text" id="total-paid" class="form-control-plaintext" name="total-paid" placeholder="---$100---" />
+                </div>
+                <div class="form-group row">
+                    <label for="balance" class="col-sm-4 col-form-label">Total Balance</label>
+                    <input type="text" id="total-balance" class="form-control-plaintext" name="balance" placeholder="---$150---" />
+                </div><br />
+                
+                <input type="button" value="Save" class="btn btn-secondary btn-lg active" aria-pressed="true" onclick="post()" />
+
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script>
+    function post() {
+        var data = {
+            BookingDate: document.getElementById("booking-date").value,
+            DepartureDate: document.getElementById("departure-date").value,
+            BookingRef: document.getElementById("booking-ref").value,
+            TotalRent: document.getElementById("total-rent").value,
+            TotalBond: document.getElementById("total-bond").value,
+            TotalPaid: document.getElementById("total-paid").value,
+            TotalBalance: document.getElementById("total-balance").value,
+            TotalGST: document.getElementById("total-gst").value,
+        }
+
+        $.ajax({
+            url: '@Url.Action("UpdateBookingDetails")',
+
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: console.log("success"),
+            error: function (jqXHR, exception) {
+                console.log(jqXHR);
+                console.log(exception);
+            }
+        })
+    }
+
+
+</script>
+
+
+
+
+
+
+
+

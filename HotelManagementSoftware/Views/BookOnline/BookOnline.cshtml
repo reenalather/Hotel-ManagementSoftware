@@ -1,0 +1,226 @@
+﻿
+@{
+    ViewBag.Title = "BookOnline";
+}
+
+@section Scripts {
+    @Scripts.Render("~/Scripts/BookingOnline.js")
+
+    @*Below are two scripts given for the daterange picker*@
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+}
+
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+@section Banner{<div style="height: 300px; overflow: hidden;">
+        <img src="@Url.Content("../../Content/Images/fg.jpg")" style="width: 100%;">
+    </div>
+}
+
+<div id="form-step-1">
+    <h2>BookOnline</h2>
+    <div class="col-md-6">
+        <div class="form-group row">
+            <label for="arrival-date" class="col-sm-4 col-form-label">Booking Date:</label>
+            <div class="input-group input-daterange">
+
+                <input name="daterange" id="booking-date" type="text" class="form-control" placeholder="--dd/mm/yyyy--" data-date-days-of-week-highlighted="[0]" data-date-start-date="0d">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="room-type" class="col-sm-4 col-form-label">Room Type</label>
+            <select class="form-control" id="room-type">
+                <option></option>
+                <option>Single Room</option>
+                <option>Double Room</option>
+                <option>Shared Room</option>
+            </select>
+        </div>
+
+        <div class="form-group row">
+            <label for="adult" class="col-sm-4 col-form-label">Adult</label>
+            <select class="form-control" id="adult">
+                <option></option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+            </select>
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group row">
+            <label for="children" class="col-sm-4 col-form-label">Infant</label>
+            <select class="form-control" id="infant">
+                <option></option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+            </select>
+        </div>
+        <div class="form-group row">
+            <label for="children" class="col-sm-4 col-form-label">Children</label>
+            <select class="form-control" id="children">
+                <option></option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+            </select>
+        </div>
+        <div class="form-group row">
+            <label for="person" class="col-sm-4 col-form-label">Total Person</label>
+            <input id="total-person" type="text" class="col-sm-3 form-control" name="person" placeholder="--No of total person--" />
+
+        </div>
+    </div>
+</div>
+<br />
+
+
+<div id="form-step-2">
+    <h2>Personal Information</h2>
+
+
+    <div class="col-md-6">
+        <div class="form-group row">
+            <label for="First-name" class="col-sm-4 col-form-label">First Name</label>
+            <input type="text" id="First-name" class="col-sm-3 form-control" name="First-name" placeholder="--Enter your name here--" />
+        </div>
+        <div class="form-group row">
+            <label for="Home-Country" class="col-sm-4 col-form-label">Country or region*:</label>
+            <input id="Home-Country" type="text" class="col-sm-3 form-control" name="Home-Country" placeholder="--abc--" />
+        </div>
+
+        <div class="form-group row">
+            <label for="Phone-number" class="col-sm-4 col-form-label">Phone Number</label>
+            <input id="Phone-number" type="text" class="col-sm-3 form-control" name="Phone-number" placeholder="--5430867402--" />
+        </div>
+
+        <div class="form-group row">
+            <label for="Address" class="col-sm-4 col-form-label">Address:</label>
+            <input id="Address" type="text" class="col-sm-3 form-control" name="address" placeholder="--abc--" />
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group row">
+            <label for="Sur-name" class="col-sm-4 col-form-label">Sur Name</label>
+            <input id="Sur-name" type="text" class="col-sm-3 form-control" name="Sur-name" placeholder="--Enter your name here--" />
+        </div>
+        <div class="form-group row">
+            <label for="Nationality" class="col-sm-4 col-form-label">Nationality:</label>
+            <input id="Nationality" type="text" class="col-sm-3 form-control" name="Nationality" placeholder="--abc--" />
+        </div>
+        <div class="form-group row">
+            <label for="Email Address" class="col-sm-4 col-form-label">Email Address:</label>
+            <input id="Email Address" type="text" class="col-sm-3 form-control" name="Email Address" placeholder="--fjdkghs@gmail.com--" />
+        </div>
+        <div class="form-group row">
+            <label for="additional-message" class="col-sm-4 col-form-label">Additional Message:</label>
+            <input id="additional-message" type="text" class="form-control input-lg" name="additional-message" placeholder="--abc--" />
+        </div>
+    </div><br />
+</div>
+
+
+<div id="form-step-3">
+    <h2>Payment</h2>
+
+    <div class="col-md-6">
+        <div class="form-group row">
+            <label for="CardNumber" class="col-sm-4 col-form-label">Debit/Credit Card Number</label>
+            <input type="text" id="cardnumber" class="col-sm-3 form-control" name="cardnumber" placeholder="--Enter your Card Number here--" />
+        </div>
+        <div class="form-group row">
+            <label for="SecurityCode" class="col-sm-4 col-form-label">Security Code</label>
+            <input id="security-code" type="text" class="col-sm-3 form-control" name="securitycode" placeholder="--abc--" />
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group row">
+            <label for="ExpireMonth" class="col-sm-4 col-form-label">Expire Month</label>
+            <input id="ExpireMonth" type="text" class="col-sm-3 form-control" name="expiremonth" placeholder="--Date--" />
+        </div>
+        <div class="form-group row">
+            <label for="ExpireYear" class="col-sm-4 col-form-label">Expire Year</label>
+            <input id="ExpiresYear" type="text" class="col-sm-3 form-control" name="expireyear" placeholder="--Date--" />
+        </div><br />
+    </div>
+</div>
+
+
+<div id="form-step-4">
+    <h2>Confirmation</h2>
+    <div class="col-md-6">
+        <div class="form-group row">
+            <label for="booking-number" class="col-sm-4 col-form-label">Booking Number</label>
+            <input type="text" id="booking-number" class="col-sm-3 form-control" name="booking-number" placeholder="--Booking Number-" />
+        </div>
+
+        <div class="form-group row">
+            <label for="reservation" class="col-sm-4 col-form-label">Your Reservation</label>
+            <input id="reservation" type="text" class="col-sm-3 form-control" name="reservation" placeholder="--rooms and beds--" />
+        </div>
+
+        <div class="form-group row">
+            <label for="Check-in" class="col-sm-4 col-form-label">Check-in:</label>
+            <input id="Check-in" type="text" class="col-sm-3 form-control" name="Check-in" placeholder="--Date--" />
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group row">
+            <label for="Check-out" class="col-sm-4 col-form-label">Check-out:</label>
+            <input id="Check-out" type="text" class="col-sm-3 form-control" name="Check-out" placeholder="--Date--" />
+        </div>
+        <div class="form-group row">
+            <label for="Gst" class="col-sm-4 col-form-label">Gst:</label>
+            <input id="gst" type="text" class="col-sm-3 form-control" name="gst" placeholder="--abc--" />
+        </div>
+        <div class="form-group row">
+            <label for="Total-Price" class="col-sm-4 col-form-label">Total Price:</label>
+            <input id="Total-Price" type="text" class="col-sm-3 form-control" name="Total-Price" placeholder="--fjdkghs@gmail.com--" />
+        </div>
+        <div class="form-group row">
+            <label for="additional-message" class="col-sm-4 col-form-label">Have a Great Trip!</label>
+        </div>
+    </div><br />
+</div>
+
+
+
+<button id="nextbutton" onclick="nextStep()">Next</button>
+
+<button id="backbutton" onclick="backStep()">Back</button>
+
+<!--We are using javascript here so postbooking is the link we have given
+    in the .js file ajax and the button id : nextbutton funtionality also written in the bookingonline.js file-->
+<script>
+    var urls = {
+        "postBooking" : "@Url.Action("UpdateBookingDetails")"
+    }
+
+    $(function () {
+        $('input[name="daterange"]').daterangepicker({
+            opens: 'left'
+        }, function (start, end, label) {
+            console.log("A new date selection was made: " + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD'));
+        });
+    });
+
+</script>
+
+
+
+<br />
