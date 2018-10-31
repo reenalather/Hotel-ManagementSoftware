@@ -291,3 +291,8 @@ C:\Users\Jack\source\repos\Hotel-ManagementSoftware\HotelManagementSoftware\obj\
 C:\Users\Jack\source\repos\Hotel-ManagementSoftware\HotelManagementSoftware\obj\Debug\HotelManagementSoftware.csproj.CopyComplete
 C:\Users\Jack\source\repos\Hotel-ManagementSoftware\HotelManagementSoftware\obj\Debug\HotelManagementSoftware.dll
 C:\Users\Jack\source\repos\Hotel-ManagementSoftware\HotelManagementSoftware\obj\Debug\HotelManagementSoftware.pdb
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\HotelManagementSoftware\bin\WebDriver.dll
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\HotelManagementSoftware\bin\WebDriver.Support.dll
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\HotelManagementSoftware\bin\WebDriver.xml
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\HotelManagementSoftware\bin\WebDriver.Support.xml
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\HotelManagementSoftware\obj\Debug\HotelManagementSoftware.csprojAssemblyReference.cache

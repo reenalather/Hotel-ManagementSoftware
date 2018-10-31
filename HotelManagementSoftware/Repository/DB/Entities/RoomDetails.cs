@@ -13,7 +13,7 @@ namespace HotelManagementSoftware.Repository.DB.Entities
             Id = Guid.NewGuid();
         }
 
-        [Key]
+        [Key] //it will create a primary key for Guid ID in the database
         public Guid Id { get; set; }
         public string HotelName { get; set; }
         public string BookingAddress { get; set; }

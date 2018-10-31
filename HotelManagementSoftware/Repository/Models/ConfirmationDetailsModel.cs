@@ -15,6 +15,6 @@ namespace HotelManagementSoftware.Repository.Models
         public bool GST { get; set; }
         public bool TotalPrice { get; set; }
 
-        public DateTime DateTime { get; set; }
+        public DateTime CreatedTime { get; set; }
     }
 }

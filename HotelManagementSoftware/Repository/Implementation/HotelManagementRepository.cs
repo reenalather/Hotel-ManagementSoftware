@@ -208,7 +208,7 @@ namespace HotelManagementSoftware.Repository.Implementation
                 //CheckOut = model.CheckOut,
                 GST = model.GST,
                 TotalPrice = model.TotalPrice,
-
+                DateTime = DateTime.UtcNow
 
             };
             Context.ConfirmationDetails.Add(entity);

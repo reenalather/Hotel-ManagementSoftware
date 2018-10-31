@@ -124,3 +124,7 @@ C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\HotelManagementS
 C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\HotelManagementSoftware.Tests\obj\Debug\HotelManagementSoftware.Tests.csproj.CopyComplete
 C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\HotelManagementSoftware.Tests\obj\Debug\HotelManagementSoftware.Tests.dll
 C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\HotelManagementSoftware.Tests\obj\Debug\HotelManagementSoftware.Tests.pdb
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\HotelManagementSoftware.Tests\bin\Debug\WebDriver.dll
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\HotelManagementSoftware.Tests\bin\Debug\WebDriver.Support.dll
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\HotelManagementSoftware.Tests\bin\Debug\WebDriver.xml
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\HotelManagementSoftware.Tests\bin\Debug\WebDriver.Support.xml

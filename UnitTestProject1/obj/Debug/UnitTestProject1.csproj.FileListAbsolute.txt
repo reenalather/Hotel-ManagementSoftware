@@ -1,0 +1,14 @@
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\UnitTestProject1\bin\Debug\UnitTestProject1.dll
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\UnitTestProject1\bin\Debug\UnitTestProject1.pdb
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\UnitTestProject1\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\UnitTestProject1\obj\Debug\UnitTestProject1.csprojAssemblyReference.cache
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CoreCompileInputs.cache
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\UnitTestProject1\obj\Debug\UnitTestProject1.csproj.CopyComplete
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\UnitTestProject1\obj\Debug\UnitTestProject1.dll
+C:\document\Visual Studio 2017\Projects\HotelManagementSoftware\UnitTestProject1\obj\Debug\UnitTestProject1.pdb

@@ -36,6 +36,7 @@
                 <option>Double Room</option>
                 <option>Shared Room</option>
             </select>
+            <small id="room-type-valid-message" style="display:none;color:red;">Please select a room type</small>
         </div>
 
         <div class="form-group row">
@@ -49,12 +50,13 @@
                 <option>5</option>
                 <option>6</option>
             </select>
+            <small id="adult-valid-message" style="display:none;color:red;">Please select number of adults</small>
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="form-group row">
-            <label for="children" class="col-sm-4 col-form-label">Infant</label>
+            <label for="infant" class="col-sm-4 col-form-label">Infant</label>
             <select class="form-control" id="infant">
                 <option></option>
                 <option>1</option>
@@ -64,6 +66,7 @@
                 <option>5</option>
                 <option>6</option>
             </select>
+            <small id="infant-valid-message" style="display:none;color:red;">Please select an infant</small>
         </div>
         <div class="form-group row">
             <label for="children" class="col-sm-4 col-form-label">Children</label>
@@ -76,11 +79,12 @@
                 <option>5</option>
                 <option>6</option>
             </select>
+            <small id="children-valid-message" style="display:none;color:red;">Please select number of children</small>
         </div>
         <div class="form-group row">
             <label for="person" class="col-sm-4 col-form-label">Total Person</label>
             <input id="total-person" type="text" class="col-sm-3 form-control" name="person" placeholder="--No of total person--" />
-
+            <small id="total-person-valid-message" style="display:none;color:red;">Please select total people</small>
         </div>
     </div>
 </div>
@@ -95,20 +99,24 @@
         <div class="form-group row">
             <label for="First-name" class="col-sm-4 col-form-label">First Name</label>
             <input type="text" id="First-name" class="col-sm-3 form-control" name="First-name" placeholder="--Enter your name here--" />
+            <small id="First-name-valid-message" style="display:none;color:red;">Please enter First Name</small>
         </div>
         <div class="form-group row">
             <label for="Home-Country" class="col-sm-4 col-form-label">Country or region*:</label>
             <input id="Home-Country" type="text" class="col-sm-3 form-control" name="Home-Country" placeholder="--abc--" />
+            <small id="Home-Country-valid-message" style="display:none;color:red;">Please enter country name</small>
         </div>
 
         <div class="form-group row">
             <label for="Phone-number" class="col-sm-4 col-form-label">Phone Number</label>
             <input id="Phone-number" type="text" class="col-sm-3 form-control" name="Phone-number" placeholder="--5430867402--" />
+            <small id="Phone-number-valid-message" style="display:none;color:red;">Please enter phone number</small>
         </div>
 
         <div class="form-group row">
             <label for="Address" class="col-sm-4 col-form-label">Address:</label>
             <input id="Address" type="text" class="col-sm-3 form-control" name="address" placeholder="--abc--" />
+            <small id="Address-valid-message" style="display:none;color:red;">Please enter address details</small>
         </div>
     </div>
 
@@ -116,18 +124,22 @@
         <div class="form-group row">
             <label for="Sur-name" class="col-sm-4 col-form-label">Sur Name</label>
             <input id="Sur-name" type="text" class="col-sm-3 form-control" name="Sur-name" placeholder="--Enter your name here--" />
+            <small id="Sur-name-valid-message" style="display:none;color:red;">Please enter sur-name</small>
         </div>
         <div class="form-group row">
             <label for="Nationality" class="col-sm-4 col-form-label">Nationality:</label>
             <input id="Nationality" type="text" class="col-sm-3 form-control" name="Nationality" placeholder="--abc--" />
+            <small id="Nationality-valid-message" style="display:none;color:red;">Please enter your nationality</small>
         </div>
         <div class="form-group row">
             <label for="Email Address" class="col-sm-4 col-form-label">Email Address:</label>
-            <input id="Email Address" type="text" class="col-sm-3 form-control" name="Email Address" placeholder="--fjdkghs@gmail.com--" />
+            <input id="Email-Address" type="text" class="col-sm-3 form-control" name="Email Address" placeholder="--fjdkghs@gmail.com--" />
+            <small id="Email-Address-valid-message" style="display:none;color:red;">Please enter email address</small>
         </div>
         <div class="form-group row">
             <label for="additional-message" class="col-sm-4 col-form-label">Additional Message:</label>
             <input id="additional-message" type="text" class="form-control input-lg" name="additional-message" placeholder="--abc--" />
+            <small id="additional-message-valid-message" style="display:none;color:red;">Please enter aditional message</small>
         </div>
     </div><br />
 </div>
@@ -140,10 +152,12 @@
         <div class="form-group row">
             <label for="CardNumber" class="col-sm-4 col-form-label">Debit/Credit Card Number</label>
             <input type="text" id="cardnumber" class="col-sm-3 form-control" name="cardnumber" placeholder="--Enter your Card Number here--" />
+            <small id="cardnumber-valid-message" style="display:none;color:red;">Please enter your card number</small>
         </div>
         <div class="form-group row">
             <label for="SecurityCode" class="col-sm-4 col-form-label">Security Code</label>
             <input id="security-code" type="text" class="col-sm-3 form-control" name="securitycode" placeholder="--abc--" />
+            <small id="security-code-valid-message" style="display:none;color:red;">Please enter card security code </small>
         </div>
     </div>
 
@@ -151,10 +165,12 @@
         <div class="form-group row">
             <label for="ExpireMonth" class="col-sm-4 col-form-label">Expire Month</label>
             <input id="ExpireMonth" type="text" class="col-sm-3 form-control" name="expiremonth" placeholder="--Date--" />
+            <small id="ExpireMonth-valid-message" style="display:none;color:red;">Please enter expire month</small>
         </div>
         <div class="form-group row">
             <label for="ExpireYear" class="col-sm-4 col-form-label">Expire Year</label>
-            <input id="ExpiresYear" type="text" class="col-sm-3 form-control" name="expireyear" placeholder="--Date--" />
+            <input id="Expire-Year" type="text" class="col-sm-3 form-control" name="expireyear" placeholder="--Date--" />
+            <small id="Expire-Year-valid-message" style="display:none;color:red;">Please enter expire year</small>
         </div><br />
     </div>
 </div>
@@ -166,16 +182,19 @@
         <div class="form-group row">
             <label for="booking-number" class="col-sm-4 col-form-label">Booking Number</label>
             <input type="text" id="booking-number" class="col-sm-3 form-control" name="booking-number" placeholder="--Booking Number-" />
+            <small id="booking-number-valid-message" style="display:none;color:red;">booking number must be generate here</small>
         </div>
 
         <div class="form-group row">
             <label for="reservation" class="col-sm-4 col-form-label">Your Reservation</label>
             <input id="reservation" type="text" class="col-sm-3 form-control" name="reservation" placeholder="--rooms and beds--" />
+            <small id="reservation-valid-message" style="display:none;color:red;">reservation must picked up by system from the client entry</small>
         </div>
 
         <div class="form-group row">
             <label for="Check-in" class="col-sm-4 col-form-label">Check-in:</label>
             <input id="Check-in" type="text" class="col-sm-3 form-control" name="Check-in" placeholder="--Date--" />
+            <small id="Check-in-valid-message" style="display:none;color:red;">check-in date picked up from calender</small>
         </div>
     </div>
 
@@ -183,14 +202,17 @@
         <div class="form-group row">
             <label for="Check-out" class="col-sm-4 col-form-label">Check-out:</label>
             <input id="Check-out" type="text" class="col-sm-3 form-control" name="Check-out" placeholder="--Date--" />
+            <small id="Check-out-valid-message" style="display:none;color:red;">check-out date picked up from calender</small>
         </div>
         <div class="form-group row">
             <label for="Gst" class="col-sm-4 col-form-label">Gst:</label>
             <input id="gst" type="text" class="col-sm-3 form-control" name="gst" placeholder="--abc--" />
+            <small id="gst-valid-message" style="display:none;color:red;">gst must be picked up from the business rule</small>
         </div>
         <div class="form-group row">
             <label for="Total-Price" class="col-sm-4 col-form-label">Total Price:</label>
             <input id="Total-Price" type="text" class="col-sm-3 form-control" name="Total-Price" placeholder="--fjdkghs@gmail.com--" />
+            <small id="Total-Price-valid-message" style="display:none;color:red;">total price must add  by the logic within the programme</small>
         </div>
         <div class="form-group row">
             <label for="additional-message" class="col-sm-4 col-form-label">Have a Great Trip!</label>
@@ -223,7 +245,4 @@
     });
 
 </script>
-
-
-
 <br />
