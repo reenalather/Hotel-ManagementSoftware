@@ -1,10 +1,14 @@
 ﻿
 @{
     ViewBag.Title = "BookOnline";
+    //List<SelectListItem> list = new List<SelectListItem>();
+    //list.Add(new SelectListItem() { Text = "C#", Value = "C#" });
+
 }
 
 @section Scripts {
     @Scripts.Render("~/Scripts/BookingOnline.js")
+    
 
     @*Below are two scripts given for the daterange picker*@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
@@ -24,13 +28,12 @@
         <div class="form-group row">
             <label for="arrival-date" class="col-sm-4 col-form-label">Booking Date:</label>
             <div class="input-group input-daterange">
-
-                <input name="daterange" id="booking-date" type="text" class="form-control" placeholder="--dd/mm/yyyy--">
+                <input name="daterange" id="booking-date" onchange="checkIn()" type="text" class="form-control" placeholder="--dd/mm/yyyy--">
             </div>
         </div>
         <div class="form-group row">
-            <label for="room-type" class="col-sm-4 col-form-label">Room Type</label>
-            <select class="form-control" id="room-type">
+            <label for="room-type" class="col-sm-4 col-form-label">Room Type</label>            
+            <select class="form-control" id="room-type" element onchange="reservation()">
                 <option></option>
                 <option>Single Room</option>
                 <option>Double Room</option>
@@ -41,7 +44,7 @@
 
         <div class="form-group row">
             <label for="adult" class="col-sm-4 col-form-label">Adult</label>
-            <select class="form-control" id="adult">
+            <select class="form-control" id="adult" onchange="totalPerson()">
                 <option></option>
                 <option>1</option>
                 <option>2</option>
@@ -57,7 +60,7 @@
     <div class="col-md-6">
         <div class="form-group row">
             <label for="infant" class="col-sm-4 col-form-label">Infant</label>
-            <select class="form-control" id="infant">
+            <select class="form-control" id="infant" onchange="totalPerson()">
                 <option></option>
                 <option>1</option>
                 <option>2</option>
@@ -70,7 +73,7 @@
         </div>
         <div class="form-group row">
             <label for="children" class="col-sm-4 col-form-label">Children</label>
-            <select class="form-control" id="children">
+            <select class="form-control" id="children" onchange="totalPerson()">
                 <option></option>
                 <option>1</option>
                 <option>2</option>
@@ -82,14 +85,12 @@
             <small id="children-valid-message" style="display:none;color:red;">Please select number of children</small>
         </div>
         <div class="form-group row">
-            <label for="person" class="col-sm-4 col-form-label">Total Person</label>
-            <input id="total-person" type="text" class="col-sm-3 form-control" name="person" placeholder="--No of total person--" />
-            <small id="total-person-valid-message" style="display:none;color:red;">Please select total people</small>
+            <label for="person" class="col-sm-4 col-form-label">Total Person</label>           
+            <span id="total-person">0</span>            
         </div>
     </div>
 </div>
 <br />
-
 
 <div id="form-step-2">
     <h2>Personal Information</h2>
@@ -180,46 +181,43 @@
     <h2>Confirmation</h2>
     <div class="col-md-6">
         <div class="form-group row">
-            <label for="booking-number" class="col-sm-4 col-form-label">Booking Number</label>
-            <input type="text" id="booking-number" class="col-sm-3 form-control" name="booking-number" placeholder="--Booking Number-" />
-            <small id="booking-number-valid-message" style="display:none;color:red;">booking number must be generate here</small>
+            <label for="booking-number" class="col-sm-4 col-form-label">Booking Number</label> <!--automatic generate automatic number-->
+            <span id="booking-number" onchange="BookingNumber()">0</span>
+           
         </div>
 
         <div class="form-group row">
-            <label for="reservation" class="col-sm-4 col-form-label">Your Reservation</label>
-            <input id="reservation" type="text" class="col-sm-3 form-control" name="reservation" placeholder="--rooms and beds--" />
-            <small id="reservation-valid-message" style="display:none;color:red;">reservation must picked up by system from the client entry</small>
+            <label for="reservation" class="col-sm-4 col-form-label">Your Reservation</label> <!--get it from the room details-->
+            <span id="reservation">0</span>
+           
         </div>
 
         <div class="form-group row">
-            <label for="Check-in" class="col-sm-4 col-form-label">Check-in:</label>
-            <input id="Check-in" type="text" class="col-sm-3 form-control" name="Check-in" placeholder="--Date--" />
-            <small id="Check-in-valid-message" style="display:none;color:red;">check-in date picked up from calender</small>
+            <label for="Check-in" class="col-sm-4 col-form-label">Check-in:</label> <!--get the dates onchange -->
+            <span id="check-in">0</span>
+           
         </div>
     </div>
 
     <div class="col-md-6">
         <div class="form-group row">
-            <label for="Check-out" class="col-sm-4 col-form-label">Check-out:</label>
-            <input id="Check-out" type="text" class="col-sm-3 form-control" name="Check-out" placeholder="--Date--" />
-            <small id="Check-out-valid-message" style="display:none;color:red;">check-out date picked up from calender</small>
+            <label for="Check-out" class="col-sm-4 col-form-label">Check-out:</label> <!--get the dates onchange -->
+            <span id="check-out">0</span>           
         </div>
         <div class="form-group row">
-            <label for="Gst" class="col-sm-4 col-form-label">Gst:</label>
-            <input id="gst" type="text" class="col-sm-3 form-control" name="gst" placeholder="--abc--" />
-            <small id="gst-valid-message" style="display:none;color:red;">gst must be picked up from the business rule</small>
+            <label for="Gst" class="col-sm-4 col-form-label">Gst:</label> <!--Get the API/method to calculate the GST on room rate-->
+            <span id="Gst">0</span>
+          
         </div>
         <div class="form-group row">
-            <label for="Total-Price" class="col-sm-4 col-form-label">Total Price:</label>
-            <input id="Total-Price" type="text" class="col-sm-3 form-control" name="Total-Price" placeholder="--fjdkghs@gmail.com--" />
-            <small id="Total-Price-valid-message" style="display:none;color:red;">total price must add  by the logic within the programme</small>
+            <label for="Total-Price" class="col-sm-4 col-form-label">Total Price:</label> <!--Get this from the database--> 
+            <span id="total-paid">0</span>
         </div>
         <div class="form-group row">
             <label for="additional-message" class="col-sm-4 col-form-label">Have a Great Trip!</label>
         </div>
     </div><br />
 </div>
-
 
 
 <button id="nextbutton" onclick="nextStep()">Next</button>

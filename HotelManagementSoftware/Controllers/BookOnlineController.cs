@@ -75,6 +75,12 @@ namespace HotelManagementSoftware.Controllers
             }
         }
 
+        public static int Add(int Adult, int infant, int Children)
+        {
+            var Total_Person = Adult + infant + Children;
+            return Total_Person;
+
+        }
 
         [HttpPost]
         public Boolean UpdateBookingDetails(BookingOnlineViewModel viewmodel)
@@ -89,22 +95,19 @@ namespace HotelManagementSoftware.Controllers
             CheckNull(viewmodel.Address, "Please enter address");
             CheckNull(viewmodel.ExpireMonth, "Please enter expiry month");
             CheckNull(viewmodel.ExpireYear, "Please enter expiry year");
-            CheckNull(viewmodel.YourReservation, "Please enter reserve rooms");
+            //CheckNull(viewmodel.YourReservation, "Please enter reserve rooms");
 
-
-
+            
             IsValid(viewmodel.Adult, "Please choose the value");
             IsValid(viewmodel.Children, "Please choose the value");
-            IsValid(viewmodel.TotalPerson, "Please choose the value");
+            //IsValid(viewmodel.TotalPerson, "Please choose the value");
             IsValid(viewmodel.PhoneNumber, "Please enter the PhoneNumber");
-            IsValid(viewmodel.ZipCode, "Please enter Zip Code");
+            //IsValid(viewmodel.ZipCode, "Please enter Zip Code");
             IsValid(viewmodel.CardNumber, "please enter card number");
             IsValid(viewmodel.SecurityCode, "please enter security code");
-            IsValid(viewmodel.BookingNumber, "please enter booking number");
-            IsValid(viewmodel.GST, "please enter GST");
-            IsValid(viewmodel.TotalPrice, "please enter the total price");
-
-
+            //IsValid(viewmodel.BookingNumber, "please enter booking number");
+            //IsValid(viewmodel.GST, "please enter GST");
+            //IsValid(viewmodel.TotalPrice, "please enter the total price");
             IsValidmail(viewmodel.EmailAddress, "Please enter valid email address");
 
 
@@ -115,15 +118,18 @@ namespace HotelManagementSoftware.Controllers
                 RoomType = viewmodel.RoomType,
                 Adult = viewmodel.Adult,
                 Children = viewmodel.Children,
-                TotalPerson = viewmodel.TotalPerson,
+                TotalPerson = viewmodel.TotalPerson,           
+
 
             };
+            
             Repository.UpdateBookingOnlineInformation(bookingOnlineDetailsModel);
+
 
             var personalInformationDetailsModel = new PersonalInformationDetailsModel()
             {
 
-                FirstName = viewmodel.FirstName,
+                FirstName = viewmodel.FirstName.ToUpper(),
                 SurName = viewmodel.SurName,
                 CountryOrRegion = viewmodel.CountryOrRegion,
                 Nationality = viewmodel.Nationality,

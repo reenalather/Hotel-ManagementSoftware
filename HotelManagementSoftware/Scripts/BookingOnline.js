@@ -12,11 +12,34 @@ var nextButton = document.querySelector("#nextbutton");
 var backButton = document.querySelector("#backbutton");
 
 
+
 step2Form.style.display = "none";
 step3Form.style.display = "none";
 step4Form.style.display = "none";
 backButton.style.display = "none";
 
+function totalPerson() {
+    var total = Number(document.querySelector("#adult").value) + Number(document.querySelector("#infant").value) + Number(document.querySelector("#children").value);
+    document.querySelector("#total-person").innerHTML= total;
+}
+
+function reservation() {
+
+    var room = String(document.querySelector("#room-type").value);
+    document.querySelector("#reservation").innerHTML = room;
+}
+
+function checkIn() {
+
+    var date = document.querySelector("#booking-date").value;
+    document.querySelector("#check-in").innerHTML = date;
+}
+
+function BookingNumber() {
+
+    var number = document.querySelector("#BookingNumber").value;
+    document.querySelector("#booking-number").innerHTML = number;
+}
 
 
 function backStep() {
@@ -57,7 +80,7 @@ var validateForm = function (currentStep) {
 
     switch (currentStep) {
         case 1:
-            var elementList = ["room-type", "adult", "infant", "children", "total-person"];
+            var elementList = ["room-type", "adult", "infant", "children"];
             for (var element in elementList) {
                 if (!validateCumpulsaryField(elementList[element])) {
                     return false;
@@ -136,7 +159,7 @@ var validateForm = function (currentStep) {
                     "Adult": document.getElementById("adult").value,
                     "Infant": document.getElementById("infant").value,
                     "Children": document.getElementById("children").value,
-                    "TotalPerson": document.getElementById("total-person").value,
+                    //"TotalPerson": document.getElementById("total-person").value,
 
                     "FirstName": document.getElementById("First-name").value,
                     "Countryorregion": document.getElementById("Home-Country").value,
@@ -152,12 +175,12 @@ var validateForm = function (currentStep) {
                     "ExpireMonth": document.getElementById("ExpireMonth").value,
                     "ExpireYear": document.getElementById("Expire-Year").value,
 
-                    "BookingNumber": document.getElementById("booking-number").value,
-                    "YourReservation": document.getElementById("reservation").value,
-                    "CheckIn": document.getElementById("Check-in").value,
-                    "CheckOut": document.getElementById("Check-out").value,
-                    "GST": document.getElementById("gst").value,
-                    "TotalPrice": document.getElementById("Total-Price").value
+                    //"BookingNumber": document.getElementById("booking-number").value,
+                    //"YourReservation": document.getElementById("reservation").value,
+                    //"CheckIn": document.getElementById("Check-in").value,
+                    //"CheckOut": document.getElementById("Check-out").value,
+                    //"GST": document.getElementById("gst").value,
+                    //"TotalPrice": document.getElementById("Total-Price").value
 
                 };
 

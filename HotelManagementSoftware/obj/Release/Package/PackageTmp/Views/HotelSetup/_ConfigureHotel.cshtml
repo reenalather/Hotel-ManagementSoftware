@@ -1,0 +1,150 @@
+﻿ @Html.Partial("_NavbarPartial")
+
+<div class="jumbotron">
+    <form class="form-horizontal">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group row">
+                    <label for="ID" class="col-sm-4 col-form-label">Hotel ID</label>
+                    <input id="ID" type="text" class="form-control-plaintext" name="hotel-ID" placeholder="1234546" />
+                </div>
+                <div class="form-group row">
+                    <label for="company-name" class="col-sm-4 col-form-label">Company Name</label>
+                    <input id="company-name-field" type="text" class="col-sm-9 form-control-plaintext" name="company-name" placeholder="text" />
+                </div><br />
+
+                <div class="form-group row">
+                    <label for="tax-ID" class="col-sm-4 col-form-label">Tax ID</label>
+                    <input type="text" id="tax-ID" class="form-control-plaintext" name="tax-ID" placeholder="45234523j34" />
+                </div>
+                <div class="form-group row">
+                    <label for="telephone" class="col-sm-4 col-form-label">Telephone</label>
+                    <input type="text" id="telephone" class="form-control-plaintext" name="telephone" placeholder="number" />
+                </div>
+                <div class="form-group row">
+                    <label for="fax" class="col-sm-4 col-form-label">Fax Number</label>
+                    <input type="text" id ="fax-number" class="form-control-plaintext" name="fax" placeholder="number" />
+                </div><br />
+
+                <div class="form-group row">
+                    <label for="address" class="col-sm-4 col-form-label">Address</label>
+                    <input type="text" id="address"class="col-sm-9 form-control-plaintext" name="address" placeholder="text" />
+                </div>
+                <div class="form-group row">
+                    <label for="city" class="col-sm-4 col-form-label">City</label>
+                    <input type="text" id="city" class="col-sm-9 form-control-plaintext" name="city" placeholder="Manhattan" />
+                </div>
+                <div class="form-group row">
+                    <label for="city-code" class="col-sm-4 col-form-label">City Code</label>
+                    <input type="text" id="city-code" class="form-control-plaintext" name="city-code" placeholder="--04---" />
+                </div>
+
+                <div class="form-group row">
+                    <label for="state" class="col-sm-4 col-form-label">State</label>
+                    <select class="form-control" id="state">
+                        <option></option>
+                        <option>Auckland</option>
+                        <option>Wellington</option>
+                        <option>Christchurch</option>
+                        <option>Queenstown</option>
+                        <option>Dunedin</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+
+                <div class="form-group row">
+                    <label for="hotel-name" class="col-sm-4 col-form-label">Hotel Name</label>
+                    <input id="hotel-name-field" type="text" class="col-sm-9 form-control-plaintext" name="hotel-name" placeholder="--Grand Hotel---" />
+                </div>
+                <div class="form-group row">
+                    <label for="business-number" class="col-sm-4 col-form-label">Business Number</label>
+                    <input type="text" id="business-number" class="col-sm-9 form-control-plaintext" name="business-number" placeholder="number" />
+                </div><br />
+
+                <div class="form-group row">
+                    <label for="email" class="col-sm-4 col-form-label">Email</label>
+                    <input type="text" id="email-address" class="col-sm-9 form-control-plaintext" name="email" placeholder="name@example.com" />
+                </div>
+                <div class="form-group row">
+                    <label for="country-code" class="col-sm-4 col-form-label">Country Code</label>
+                    <input type="text" id="country-code" class="form-control-plaintext" name="country-code" placeholder="---0064----" />
+                </div>
+
+                <div class="form-group row">
+                    <label for="postal-code" class="col-sm-4 col-form-label">Postal Code</label>
+                    <input type="text" id="postal-code" class="form-control-plaintext" name="postal-code" placeholder="--6011--" />
+                </div><br />
+
+                <div class="form-group row">
+                    <label for="website" class="col-sm-4 col-form-label">Website</label>
+                    <input type="text" id="website"class="col-sm-9 form-control-plaintext" name="website" placeholder="www.palace.com" />
+                </div>
+
+                <div class="form-group row">
+                    <label for="website-logo" class="col-sm-4 col-form-label">Website Logo</label>
+                    <input type="file" id="website-logo"class="form-control-file" name="website-logo" />
+                </div>
+
+                <div class="form-group row">
+                    <label for="skype" class="col-sm-4 col-form-label">Skype</label>
+                    <input type="text" id="skype"class="col-sm-9 form-control-plaintext" name="skype" placeholder="--rajreena--" />
+                </div>
+                <div class="form-group row">
+                    <label for="language" class="col-sm-4 col-form-label">Language</label>
+                    <input type="text" id="language"class="col-sm-9 form-control-plaintext" name="language" placeholder="---english--" />
+                </div><br />
+
+                <input type="button" value="Save" class="btn btn-secondary btn-lg active" aria-pressed="true" onclick="post()"/>
+            </div>
+        </div>
+    </form>
+</div>
+
+
+<script>
+    function post() {
+        var data = {
+            HotelId: document.getElementById("ID").value,
+            CompanyName: document.getElementById("company-name-field").value,
+            HotelName: document.getElementById("hotel-name-field").value,
+            BusinessNumber: document.getElementById("business-number").value,
+            Taxid: document.getElementById("tax-ID").value,
+            Telephone: document.getElementById("telephone").value,
+            FaxNumber: document.getElementById("fax-number").value,
+            EmailAddress: document.getElementById("email-address").value,
+            CountryCode: document.getElementById("country-code").value,
+            PostalCode: document.getElementById("postal-code").value,
+            Address: document.getElementById("address").value,
+            City: document.getElementById("city").value,
+            CityCode: document.getElementById("city-code").value,
+            State: document.getElementById("state").value,
+            Website: document.getElementById("website").value,
+            Skype: document.getElementById("skype").value,        
+            Language: document.getElementById("language").value,
+
+        }
+
+        $.ajax({
+            url: '@Url.Action("UpdateHotelDetails")',
+    
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: console.log("success"),
+            error: function (jqXHR, exception) {
+                console.log(jqXHR);
+                console.log(exception);
+            }
+        })
+        
+    }
+
+</script>
+
+
+
+
+
+

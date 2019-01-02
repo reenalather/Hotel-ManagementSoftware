@@ -133,7 +133,7 @@ namespace HotelManagementSoftware.Repository.Implementation
                 Logo = model.Logo,
                 Skype = model.Skype,
                 Language = model.Language,
-                DateTime = DateTime.UtcNow,
+                DateTime = DateTime .UtcNow,
             };
 
             Context.LogoDetails.Add(entity);
@@ -202,7 +202,7 @@ namespace HotelManagementSoftware.Repository.Implementation
             var entity = new ConfirmationDetails()
 
             {
-                BookingNumber = model.BookingNumber,
+                //BookingNumber = model.BookingNumber,
                 YourReservation = model.YourReservation,
                 //CheckIn = model.CheckIn,
                 //CheckOut = model.CheckOut,

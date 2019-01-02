@@ -1,0 +1,87 @@
+﻿
+@{
+    ViewBag.Title = "Confirmation";
+}
+
+<h2>Confirmation</h2>
+
+@section Banner{<div style="height: 300px; overflow: hidden;">
+        <img src="@Url.Content("../../Content/Images/;k.JPG")" style="width: 100%;">
+    </div>
+}
+
+<form>
+    <div class="col-md-6">
+        <div class="form-group row">
+            <label for="booking-number" class="col-sm-4 col-form-label">Booking Number</label>
+            <input type="text" id="booking-number" class="col-sm-3 form-control" name="booking-number" placeholder="--Booking Number-" />
+        </div>
+        <div class="form-group row">
+            <label for="Email Address" class="col-sm-4 col-form-label">Email Address</label>
+            <input id="Email-Address" type="text" class="col-sm-3 form-control" name="Email-Address" placeholder="--abc--" />
+        </div>
+
+        <div class="form-group row">
+            <label for="reservation" class="col-sm-4 col-form-label">Your Reservation</label>
+            <input id="reservation" type="text" class="col-sm-3 form-control" name="reservation" placeholder="--rooms and beds--" />
+        </div>
+
+        @*<div class="form-group row">
+            <label for="Check-in" class="col-sm-4 col-form-label">Check-in:</label>
+            <input id="Check-in" type="text" class="col-sm-3 form-control" name="Check-in" placeholder="--Date--" />
+        </div>*@
+    </div>
+
+    <div class="col-md-6">
+        @*<div class="form-group row">
+            <label for="Check-out" class="col-sm-4 col-form-label">Check-out:</label>
+            <input id="Check-out" type="text" class="col-sm-3 form-control" name="Check-out" placeholder="--Date--" />
+        </div>*@
+        <div class="form-group row">
+            <label for="Gst" class="col-sm-4 col-form-label">Gst:</label>
+            <input id="Nationality" type="text" class="col-sm-3 form-control" name="Nationality" placeholder="--abc--" />
+        </div>
+        <div class="form-group row">
+            <label for="Email Address" class="col-sm-4 col-form-label">Total Price:</label>
+            <input id="Email Address" type="text" class="col-sm-3 form-control" name="Email Address" placeholder="--fjdkghs@gmail.com--" />
+        </div>
+        <div class="form-group row">
+            <label for="additional-message" class="col-sm-4 col-form-label">Have a Great Trip!</label>
+            <input id="additional-message" type="text" class="form-control input-lg" name="additional-message" placeholder="--abc--" />
+        </div>
+    </div><br />
+</form>
+<form action="">
+    <button type="submit" class="btn btn- btn-lg active" aria-pressed="true">Confirm</button>
+</form>
+
+<script>
+    function post() {
+        var data = {
+            BookingNumber: document.getElementById("booking-number").value,
+            EmailAddress: document.getElementById("Email Address").value,
+            YourReservation: document.getElementById("reservation").value,
+            //CheckIn: document.getElementById("check-in").value,
+            //CheckOut: document.getElementById("check-out").value,
+            GST: document.getElementById("gst").value,
+            TotalPrice: document.getElementById("Total-Price").value,
+
+         }
+
+        $.ajax({
+            url: '@Url.Action("UpdateConfirmationDetails")',
+
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: console.log("success"),
+            error: function (jqXHR, exception) {
+                console.log(jqXHR);
+                console.log(exception);
+            }
+        })
+
+    }
+
+</script>
+

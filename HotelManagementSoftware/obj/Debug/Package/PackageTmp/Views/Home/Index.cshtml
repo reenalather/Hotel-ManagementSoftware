@@ -1,0 +1,17 @@
+﻿@section Banner{
+    @*Image Display at home page*@
+    <div style="height: 400px; overflow: hidden;">       
+        <img src="@Url.Content("../../Content/Images/fg.JPG")" style="width: 100%;">
+    </div>
+}
+@section SPAViews {
+    @Html.Partial("_Home")
+}
+
+
+@section Scripts{
+
+    @Scripts.Render("~/bundles/knockout")
+    @*@Scripts.Render("~/bundles/app")*@
+
+}

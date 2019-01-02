@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta http-equiv="Content-Type" content="text/html" charset="utf-8" />
+    <title>@ViewBag.Title Wellington Hotel</title>
+
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="~/Content/Site.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/bootstrap.css" rel="stylesheet" type="text/css" />
+    <link href="~/Contents/bootstrap-datepicker.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/themes/base/jquery-ui.css" rel="stylesheet" />
+
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="~/Scripts/jquery-ui-1.12.1.js"></script>
+    @*<script src="~/Scripts/bootstrap-datepicker.js"></script>*@
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    @*<script src="~/Scripts/bootstrap-datepicker.min.js"></script>*@
+
+
+    @*<link href="jquery-ui.css" rel="stylesheet" />*@
+    @*<script src="jquery-ui.js"></script>*@
+    @*<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">*@
+    @*<script src="~/Scripts/modernizr-2.8.3.js"></script>*@
+    @*<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>*@
+
+    
+    
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+
+<body>
+
+    @*Home Navbar display*@
+    @Html.Partial("_NavbarHomePartial")
+
+    <div>
+        @RenderSection("Banner", required: false)
+
+        <div class="container body-content">
+            @RenderBody()
+            @RenderSection("SPAViews", required: false)<hr />
+        </div>
+
+        @*footer*@
+            <footer class="navbar navbar-inverse navbar-fixed-bottom" style="color: white">
+                <div class="row text-center"><br />
+                    <text for="Year" class="col-md-3">@DateTime.Now.Year - Wellington Hotel</text>
+                    <text for="Address" class="col-md-3">Address</text>
+                    <text for="Phone NUmber" class="col-md-3">Phone Number</text>
+                    <text for="Facebook" class="col-md-3">Facebook</text>
+                </div>
+            </footer>
+        </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Styles.Render("~/Content/css")
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
+
+

@@ -17,7 +17,14 @@ namespace HotelManagementSoftware.Repository.DB.Entities
         [Key]
 
         public Guid Id { get; set; }
-        public string BookingNumber { get; set; }
+        public string BookingNumber
+        {
+            get {
+
+                return Id.ToString();
+            }
+
+          }
         public string EmailAddress { get; set; }
         public string YourReservation { get; set; }
         //public DateTime CheckIn { get; set; }

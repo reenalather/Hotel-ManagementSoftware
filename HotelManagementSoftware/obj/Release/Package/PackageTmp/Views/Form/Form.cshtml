@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewBag.Title = "Form";
+}
+
+<h2>Personal Information</h2></br>
+
+@section Banner{<div style="height: 300px; overflow: hidden;">
+        <img src="@Url.Content("../../Content/Images/;k.JPG")" style="width: 100%;">
+    </div>
+}
+
+<form>
+    <div class="col-md-6">
+        <div class="form-group row">
+            <label for="First-name" class="col-sm-4 col-form-label">First Name</label>
+            <input type="text" id="First-name" class="col-sm-3 form-control" name="First-name" placeholder="--Enter your name here--" />
+        </div>
+        <div class="form-group row">
+            <label for="Home-Country" class="col-sm-4 col-form-label">Country or region*:</label>
+            <input id="Home-Country" type="text" class="col-sm-3 form-control" name="Home-Country" placeholder="--abc--" />
+        </div>
+
+        <div class="form-group row">
+            <label for="Phone-number" class="col-sm-4 col-form-label">Phone Number</label>
+            <input id="Phone-number" type="text" class="col-sm-3 form-control" name="Phone-number" placeholder="--5430867402--" />
+        </div>
+
+        <div class="form-group row">
+            <label for="Address" class="col-sm-4 col-form-label">Address:</label>
+            <input id="Address" type="text" class="col-sm-3 form-control" name="address" placeholder="--abc--" />
+        </div>
+    </div>
+
+    <div class="col-md-6">
+        <div class="form-group row">
+            <label for="Sur-name" class="col-sm-4 col-form-label">Sur Name</label>
+            <input id="Sur-name" type="text" class="col-sm-3 form-control" name="Sur-name" placeholder="--Enter your name here--" />
+        </div>
+        <div class="form-group row">
+            <label for="Nationality" class="col-sm-4 col-form-label">Nationality:</label>
+            <input id="Nationality" type="text" class="col-sm-3 form-control" name="Nationality" placeholder="--abc--" />
+        </div>
+        <div class="form-group row">
+            <label for="Email Address" class="col-sm-4 col-form-label">Email Address:</label>
+            <input id="Email Address" type="text" class="col-sm-3 form-control" name="Email Address" placeholder="--fjdkghs@gmail.com--" />
+        </div>
+        <div class="form-group row">
+            <label for="additional-message" class="col-sm-4 col-form-label">Additional Message:</label>
+            <input id="additional-message" type="text" class="form-control input-lg" name="additional-message" placeholder="--abc--" />
+        </div>
+    </div><br />
+</form>
+<form action="Payment">
+    <button type="submit" class="btn btn- btn-lg active" aria-pressed="true">Confirm</button>
+</form>
+
+<script>
+    function post() {
+        var data = {
+            FirstName: document.getElementById("First-name").value,
+            Countryorregion: document.getElementById("Home-Country").value,
+            PhoneNumber: document.getElementById("Phone-number").value,
+            Address: document.getElementById("Address").value,
+            SurName: document.getElementById("Sur-name").value,
+            Nationality: document.getElementById("Nationality").value,
+            EmailAddress: document.getElementById("Email Address").value,
+            AdditionalMessage: document.getElementById("additional-message").value,
+
+         }
+
+        $.ajax({
+            url: '@Url.Action("UpdatePersonalDetails")',
+
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify(data),
+            success: console.log("success"),
+            error: function (jqXHR, exception) {
+                console.log(jqXHR);
+                console.log(exception);
+            }
+        })
+
+    }
+
+</script>
+
+
+
+
+

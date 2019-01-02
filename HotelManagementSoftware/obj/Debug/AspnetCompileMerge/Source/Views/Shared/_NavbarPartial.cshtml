@@ -1,0 +1,44 @@
+﻿<div class="col-3">
+    <div class="row">
+        <div class="col-3">
+            <div class="navbar navbar-default navbar-fixed-top">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+
+                        @Html.ActionLink("Logo", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+
+                    </div>
+
+
+                    @*Header Login and enquiry button on home page*@
+                    <div class="navbar-right">
+
+                        <form class="navbar-form navbar-right">
+                            <button type="submit" class="btn btn-default">Enquiry</button>
+                        </form>
+
+                        @Html.Partial("_LoginPartial")
+
+                    </div>
+
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Hotel Setup", "Index", "HotelSetup", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Room Setup", "Index", "RoomSetup", new { area = "" }, null)</li>
+                            <li>@Html.ActionLink("Booking Setup", "Index", "BookingSetup", new { area = "" }, null)</li>
+                     
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
